@@ -20,10 +20,10 @@
             <small class="text-danger" *ngIf="email.errors.pattern"><b>Invalid email Id</b></small>
           </div>
           </div>
-    
+
           <div class="form-group">
             <label for="pwd" style="margin-top: 5px;">User Password: <b class="text-danger">*</b></label>
-            <input type="password" class="form-control" placeholder="enter password" name="pwd" [(ngModel)]="user.password" required 
+            <input type="password" class="form-control" placeholder="enter password" name="pwd" [(ngModel)]="user.password" required
             #password="ngModel"
             [class.is-invalid]="password.invalid && password.touched"
             >
@@ -32,7 +32,7 @@
             </div>
             <small style="color: gray; font-size: 10px;">atleast one uppercase, numeric digit, lowercase, special character, length of 6-20</small>
           </div>
-    
+
           <div class="checkbox" style="margin-top: 5px;">
             <small style="color: gray;"><input type="checkbox" name="remember"> Remember me</small>
             <small style="color: navy; margin-left: 42%; cursor: pointer;">forgot password?</small>
@@ -68,10 +68,10 @@
                  <small class="text-danger" *ngIf="professoremail.errors.pattern"><b>Invalid email Id</b></small>
                </div>
                </div>
-         
+
                <div class="form-group">
                  <label for="pwd" style="margin-top: 5px;">Professor Password: <b class="text-danger">*</b></label>
-                 <input type="password" class="form-control" placeholder="enter password" name="pwd" [(ngModel)]="professor.password" required 
+                 <input type="password" class="form-control" placeholder="enter password" name="pwd" [(ngModel)]="professor.password" required
                  #professorpassword="ngModel"
                  [class.is-invalid]="professorpassword.invalid && professorpassword.touched"
                  >
@@ -80,7 +80,7 @@
                  </div>
                  <small style="color: gray; font-size: 10px;">atleast one uppercase, numeric digit, lowercase, special character, length of 6-20</small>
                </div>
-         
+
                <div class="checkbox" style="margin-top: 5px;">
                  <small style="color: gray;"><input type="checkbox" name="remember"> Remember me</small>
                  <small style="color: navy; margin-left: 42%; cursor: pointer;">forgot password?</small>
@@ -99,7 +99,7 @@
               <i class="fa fa-github  mx-3 fa-2x"></i>
             </div>
              </div>
-    
+
         <div class="admin-login-form">
         <h2 class="textual">Admin Login</h2>
         <form #adminloginform="ngForm" (ngSubmit)="adminLogin()">
@@ -116,10 +116,10 @@
             <small class="text-danger" *ngIf="adminemail.errors.pattern"><b>Invalid email Id</b></small>
           </div>
           </div>
-    
+
           <div class="form-group">
             <label for="pwd" style="margin-top: 5px;">Admin Password: <b class="text-danger">*</b></label>
-            <input type="password" class="form-control" placeholder="enter admin password" name="pwd" [(ngModel)]="adminPassword" required 
+            <input type="password" class="form-control" placeholder="enter admin password" name="pwd" [(ngModel)]="adminPassword" required
             #adminpassword="ngModel"
             [class.is-invalid]="adminpassword.invalid && adminpassword.touched"
             >
@@ -128,7 +128,6 @@
             </div>
             <small style="color: gray; font-size: 10px;">Only the admin knows his correct email address & password</small>
           </div>
-    
           <small style="color: navy; margin-left: 69%; cursor: pointer;">forgot password?</small>
           <button [disabled]="adminloginform.form.invalid" type="submit" class="btn loginbtn">Login</button>
         </form>

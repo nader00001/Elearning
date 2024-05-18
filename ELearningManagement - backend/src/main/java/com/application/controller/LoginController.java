@@ -12,46 +12,50 @@ import com.application.services.ProfessorService;
 import com.application.services.UserService;
 
 @RestController
-public class LoginController 
+public class LoginController
 {
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private ProfessorService professorService;
-	
+
 	@GetMapping("/")
     public String welcomeMessage()
     {
     	return "Welcome to Elearning Management system !!!";
     }
-	
+
 	@PostMapping("/loginuser")
 	@CrossOrigin(origins = "http://localhost:4200")
 	public User loginUser(@RequestBody User user) throws Exception
 	{
 		String currEmail = user.getEmail();
 		String currPassword = user.getPassword();
-		
-		User userObj = null;
+
+		User userObj = new User();
 		if(currEmail != null && currPassword != null)
 		{
+
 			userObj = userService.fetchUserByEmailAndPassword(currEmail, currPassword);
+      System.out.println("Email: " + userObj);
 		}
 		if(userObj == null)
 		{
+      System.out.println("Email: " + currEmail + "password" +currPassword);
 			throw new Exception("User does not exists!!! Please enter valid credentials...");
-		}		
+
+		}
 		return userObj;
 	}
-	
+
 	@PostMapping("/loginprofessor")
 	@CrossOrigin(origins = "http://localhost:4200")
 	public Professor loginDoctor(@RequestBody Professor professor) throws Exception
 	{
 		String currEmail = professor.getEmail();
 		String currPassword = professor.getPassword();
-		
+
 		Professor professorObj = null;
 		if(currEmail != null && currPassword != null)
 		{
@@ -60,7 +64,7 @@ public class LoginController
 		if(professorObj == null)
 		{
 			throw new Exception("Professor does not exists!!! Please enter valid credentials...");
-		}		
+		}
 		return professorObj;
 	}
 }

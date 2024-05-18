@@ -2,11 +2,11 @@
   "name": "elearning-management",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && ng serve",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && ng build",
+    "test": "export NODE_OPTIONS=--openssl-legacy-provider && ng test",
+    "lint": "export NODE_OPTIONS=--openssl-legacy-provider && ng lint",
+    "e2e": "export NODE_OPTIONS=--openssl-legacy-provider && ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -19,13 +19,14 @@
     "@angular/platform-browser": "~12.0.3",
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
-    "@angular/youtube-player": "^12.1.1",
+    "@angular/youtube-player": "^12.2.13",
     "angular-bootstrap-md": "^11.1.0",
     "bootstrap": "^5.0.2",
+    "file-saver": "^2.0.5",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "ngx-owl-carousel-o": "^6.0.0",
-    "rxjs": "~6.6.0",
+    "rxjs": "^6.6.7",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },
@@ -42,6 +43,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "typescript": "~4.2.3"
+    "typescript": "~4.2.3",
+    "webpack": "^5.91.0"
   }
 }

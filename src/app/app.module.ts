@@ -29,6 +29,7 @@ import { AddchapterComponent } from './components/addchapter/addchapter.componen
 import { MycoursesComponent } from './components/mycourses/mycourses.component';
 import { MywishlistComponent } from './components/mywishlist/mywishlist.component';
 import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
+import { ConversationComponent } from './components/conversation/conversation.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { WelcomepageComponent } from './components/welcomepage/welcomepage.compo
     AddchapterComponent,
     MycoursesComponent,
     MywishlistComponent,
-    WelcomepageComponent
+    WelcomepageComponent,
+    ConversationComponent
   ],
   imports: [
     BrowserModule,

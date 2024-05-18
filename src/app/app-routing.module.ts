@@ -23,6 +23,7 @@ import { AdminGuard } from './guards/admin.guard';
 import { ProfessorGuard } from './guards/professor.guard';
 import { RouterGuard } from './guards/router.guard';
 import { UserGuard } from './guards/user.guard';
+import { ConversationComponent } from './components/conversation/conversation.component';
 
 const routes: Routes = [
   {path:'',component:WelcomepageComponent},
@@ -43,7 +44,8 @@ const routes: Routes = [
   {path:'editprofessorprofile',component:ProfessorprofileComponent,canActivate:[ProfessorGuard]},
   {path:'edituserprofile',component:UserprofileComponent,canActivate:[UserGuard]},
   {path:'mywishlist',component:MywishlistComponent,canActivate:[RouterGuard]},
-  {path:'mycourses',component:MycoursesComponent,canActivate:[RouterGuard]}
+  {path:'mycourses',component:MycoursesComponent,canActivate:[RouterGuard]},
+  {path:'conversation/:id',component:ConversationComponent},
 ];
 
 @NgModule({
