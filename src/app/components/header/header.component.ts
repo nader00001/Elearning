@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { data } from 'jquery';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +12,20 @@ export class HeaderComponent implements OnInit {
   loggedUser = '';
   currRole = '';
   title = '';
+  user:any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private _router: Router
+    private _router: Router,private userService:UserService
   ) {}
 
   ngOnInit(): void {
+    this.userService.getAllUsers().subscribe(
+      (data)=>{console.log(data)
+        this.user=data.find((el:any)=>el.email==this.loggedUser)
+      }
+      
+    )
     this.loggedUser = JSON.stringify(
       sessionStorage.getItem('loggedUser') || '{}'
     );
@@ -51,11 +60,12 @@ export class HeaderComponent implements OnInit {
 
   contacterAdmin() {
     if (this.loggedUser === 'admin@gmail.com') {
-      this._router.navigate(['/admindashboard']);
+      this._router.navigate(['/conversation/admin']);
     } else if (this.currRole === 'professor') {
-      this._router.navigate(['/professordashboard']);
+      this._router.navigate(['/conversation/',this.user.userid]);
     } else if (this.currRole === 'user') {
-      this._router.navigate(['/userdashboard']);
+      console.log(this.loggedUser)
+      this._router.navigate(['/conversation/',this.user.userid]);
     }
   }
 }

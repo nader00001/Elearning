@@ -1,12 +1,12 @@
 <app-header></app-header>
 
-<div class="heading-text"><b>User List</b></div>
+<div class="heading-text"><b>قائمة المستخدمين</b></div>
 <div class="row">
-    <div  *ngFor="let user of users | async" class="col-4 card" id="bloodCards">
+    <div *ngFor="let user of users | async" class="col-4 card" id="bloodCards">
         <div class="img-block">
             <div class="circle">
-                <img *ngIf="user.gender === 'Male' || user.gender === 'male'"  class="bloodimg" [src]="'assets/img/maleuser.png'" width="100" height="100">
-                <img *ngIf="user.gender === 'Female' || user.gender === 'female'"  class="bloodimg" [src]="'assets/img/femaleuser.png'" width="100" height="120">
+                <img *ngIf="user.gender === 'Male' || user.gender === 'male'" class="bloodimg" [src]="'assets/img/maleuser.png'" width="100" height="100">
+                <img *ngIf="user.gender === 'Female' || user.gender === 'female'" class="bloodimg" [src]="'assets/img/femaleuser.png'" width="100" height="120">
             </div>
         </div>
         <div class="card-block">
@@ -18,7 +18,7 @@
             <div class="text"><b style="color: maroon;"> {{user.mobile}} </b></div>
         </div>
     </div>
-  </div>
+</div>
 
 <br><br><br>
 <app-footer></app-footer>

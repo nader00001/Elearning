@@ -1,49 +1,50 @@
 <app-header></app-header>
 
 <div class="container">
-  <h2 class="textual"><i class="fa fa-book"></i> New Chapters </h2>
-  <small style="color:darkgreen; margin-left: 10%; font-weight: bold;">On adding new chapters, your course will appear more meaningful to learn</small>
+  <h2 class="textual"><i class="fa fa-book"></i> الفصول الجديدة </h2>
+
+  <small style="color:darkgreen; margin-left: 10%; font-weight: bold;">عند إضافة فصول جديدة، سيبدو دورك أكثر معنوية للتعلم</small>
+
   <form #addChapterform="ngForm" (ngSubmit)="addChapters()">
-      
       <div class="form-group">
-          <label for="coursename">Course Name: <b class="text-danger">*</b></label>
+        <label for="coursename">اسم الدورة: <b class="text-danger">*</b></label>
           <select class="form-control" id="sel1" name="coursename" [(ngModel)]="chapter.coursename" required
             #coursename="ngModel">
               <option style="color: lightgray;" selected="true" value="default">select course name</option>
               <option *ngFor="let course of coursenames | async">{{course}}</option>
             </select>
-          <!--<input type="text" class="form-control" placeholder="enter course name" name="coursename" [(ngModel)]="chapter.coursename" required 
+          <!--<input type="text" class="form-control" placeholder="enter course name" name="coursename" [(ngModel)]="chapter.coursename" required
           #coursename="ngModel"
           [class.is-invalid]="coursename.invalid && coursename.touched">
          <small class="text-danger" [class.d-none]="coursename.valid || coursename.untouched"><b>required field</b></small>-->
       </div>
-      <small style="color: gray; font-weight: bold;">Please choose course name from the drop-down</small>
+      <small style="color: gray; font-weight: bold;">يرجى اختيار اسم الدورة من القائمة المنسدلة</small>
 
       <div id="chapter1">
       <div class="form-group">
-          <label for="chapter1name">Chapter-1 Name: <b class="text-danger">*</b></label>
+          <label for="chapter1name">اسم الفصل الأول <b class="text-danger">*</b></label>
           <input type="text" class="form-control" placeholder="enter chapter-1 name" id="chapter1nametxt" name="chapter1name" [(ngModel)]="chapter.chapter1name">
       </div>
       <div class="form-group">
-        <label for="chapter1id">Chapter-1 URL: <b class="text-danger">*</b></label>
+        <label for="chapter1id">رابط الفصل الأول<b class="text-danger">*</b></label>
         <input type="text" class="form-control" placeholder="enter chapter-1 URL as ID" id="chapter1idtxt" name="chapter1id" [(ngModel)]="chapter.chapter1id">
-        <small style="color: gray; font-weight: bold;">Please Provide the Chapter-1 video ID as the URL here...</small>
+        <small style="color: gray; font-weight: bold;">"يرجى تقديم معرف الفيديو للفصل الأول كرابط هنا..."</small>
       </div>
       <div id="chapter1btn" style="width: 12%; cursor: pointer; margin-top: 8px; background-color: rgb(13, 68, 65); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-plus"></i> Add</div>
     </div>
 
       <div id="chapter2">
       <div class="form-group">
-        <label for="chapter2name">Chapter-2 Name: <b class="text-danger">*</b></label>
+        <label for="chapter2name">اسم الفصل الثاني:" <b class="text-danger">*</b></label>
         <input type="text" class="form-control" placeholder="enter chapter-2 name" id="chapter2nametxt" name="chapter2name" [(ngModel)]="chapter.chapter2name">
       </div>
       <div class="form-group">
-        <label for="chapter2id">Chapter-2 URL: <b class="text-danger">*</b></label>
+        <label for="chapter2id">رابط الفصل الثاني: <b class="text-danger">*</b></label>
         <input type="text" class="form-control" placeholder="enter chapter-2 URL as ID" id="chapter2idtxt" name="chapter2id" [(ngModel)]="chapter.chapter2id">
-        <small style="color: gray; font-weight: bold;">Please Provide the Chapter-2 video ID as the URL here...</small>
+        <small style="color: gray; font-weight: bold;">يرجى تقديم معرف الفيديو للفصل الثاني كرابط هنا...</small>
       </div>
       <div id="chapter2btn" style="width: 12%; margin-top: 8px; cursor: pointer; background-color: rgb(13, 68, 65); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-plus"></i> Add</div>
-      <div id="remove2btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>  
+      <div id="remove2btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>
     </div>
 
       <div id="chapter3">
@@ -57,7 +58,7 @@
           <small style="color: gray; font-weight: bold;">Please Provide the Chapter-3 video ID as the URL here...</small>
         </div>
         <div id="chapter3btn" style="width: 12%; margin-top: 8px; cursor: pointer; background-color: rgb(13, 68, 65); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-plus"></i> Add</div>
-        <div id="remove3btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>  
+        <div id="remove3btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>
       </div>
 
       <div id="chapter4">
@@ -71,7 +72,7 @@
           <small style="color: gray; font-weight: bold;">Please Provide the Chapter-4 video ID as the URL here...</small>
         </div>
         <div id="chapter4btn" style="width: 12%; margin-top: 8px; cursor: pointer; background-color: rgb(13, 68, 65); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-plus"></i> Add</div>
-        <div id="remove4btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>  
+        <div id="remove4btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>
       </div>
 
       <div id="chapter5">
@@ -85,7 +86,7 @@
           <small style="color: gray; font-weight: bold;">Please Provide the Chapter-5 video ID as the URL here...</small>
         </div>
         <div id="chapter5btn" style="width: 12%; margin-top: 8px; cursor: pointer; background-color: rgb(13, 68, 65); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-plus"></i> Add</div>
-        <div id="remove5btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>  
+        <div id="remove5btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>
       </div>
 
       <div id="chapter6">
@@ -99,7 +100,7 @@
           <small style="color: gray; font-weight: bold;">Please Provide the Chapter-6 video ID as the URL here...</small>
         </div>
         <div id="chapter6btn" style="width: 12%; margin-top: 8px; cursor: pointer; background-color: rgb(13, 68, 65); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-plus"></i> Add</div>
-        <div id="remove6btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>  
+        <div id="remove6btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>
       </div>
 
       <div id="chapter7">
@@ -113,7 +114,7 @@
           <small style="color: gray; font-weight: bold;">Please Provide the Chapter-7 video ID as the URL here...</small>
         </div>
         <div id="chapter7btn" style="width: 12%; margin-top: 8px; cursor: pointer; background-color: rgb(13, 68, 65); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-plus"></i> Add</div>
-        <div id="remove7btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>  
+        <div id="remove7btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>
       </div>
 
       <div id="chapter8">
@@ -127,7 +128,7 @@
           <small style="color: gray; font-weight: bold;">Please Provide the Chapter-8 video ID as the URL here...</small>
         </div>
         <div id="chapter8btn" style="width: 12%; margin-top: 8px; cursor: pointer; background-color: rgb(13, 68, 65); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-plus"></i> Add</div>
-        <div id="remove8btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>  
+        <div id="remove8btn" style="width: 15%; margin-top: -4.5%; margin-left: 14%; cursor: pointer; background-color: rgb(201, 13, 13); color: white; font-weight: bold; border: none; font-size: small; outline: none; padding: 5px 15px 5px 15px; border-radius: 15px;"><i class="fa fa-trash"></i> Remove</div>
       </div>
 
      <div class="checkbox" style="margin-top: 5px;">

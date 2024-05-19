@@ -1,32 +1,32 @@
 <app-header></app-header>
 
-<div class="heading-text"><b>Professor List</b></div>
+<div class="heading-text"><b>قائمة الأساتذة</b></div>
 <div class="row">
-        <div *ngFor="let professor of professorlist | async" class="col-4 card" id="bloodCards">
-         <div class="img-block">
+    <div *ngFor="let professor of professorlist | async" class="col-4 card" id="bloodCards">
+        <div class="img-block">
             <div class="circle">
                 <img *ngIf="professor.gender === 'Male' || professor.gender === 'male'"  class="bloodimg" [src]="'assets/img/maleprofessor.png'" width="120" height="120">
                 <img *ngIf="professor.gender === 'Female' || professor.gender === 'female'"  class="bloodimg" [src]="'assets/img/femaleprofessor.png'" width="120" height="120">
             </div>
         </div>
         <div class="card-block">
-            <div class="text"><b style="color: darkblue">Professor ID : </b><b style="color: darkred;"><small class="date-cover">{{professor.professorid}}</small></b></div>
-            <div class="text"><b style="color: darkblue">Professor Name : </b><b style="color: darkred;"> {{professor.professorname}} </b></div>
-            <div class="text"><b style="color: darkblue">Degree Completed : </b><b style="color: darkred;"> {{professor.degreecompleted}} </b></div>
-            <div class="text"><b style="color: darkblue">Email : </b><b style="color: darkred;"> {{professor.email}} </b></div>
-            <div class="text"><b style="color: darkblue">Institution Name : </b><b style="color: darkred;"> {{professor.institutionname}} </b></div>
-            <div class="text"><b style="color: darkblue">Department : </b><b style="color: darkred;"> {{professor.department}} </b></div>
-            <div class="text"><b style="color: darkblue">Experience: </b><b style="color: darkred;"> {{professor.experience}} years </b></div>
-            <div class="text"><b style="color: darkblue">Gender : </b><b style="color: darkred;"> {{professor.gender}} </b></div>
-            <div class="text"><b style="color: darkblue">Mobile : </b><b style="color: darkred;"> {{professor.mobile}} </b></div>
+            <div class="text"><b style="color: darkblue">رقم هوية الأستاذ : </b><b style="color: darkred;"><small class="date-cover">{{professor.professorid}}</small></b></div>
+            <div class="text"><b style="color: darkblue">اسم الأستاذ : </b><b style="color: darkred;"> {{professor.professorname}} </b></div>
+            <div class="text"><b style="color: darkblue">الدرجة المكتسبة : </b><b style="color: darkred;"> {{professor.degreecompleted}} </b></div>
+            <div class="text"><b style="color: darkblue">البريد الإلكتروني : </b><b style="color: darkred;"> {{professor.email}} </b></div>
+            <div class="text"><b style="color: darkblue">اسم المؤسسة : </b><b style="color: darkred;"> {{professor.institutionname}} </b></div>
+            <div class="text"><b style="color: darkblue">القسم : </b><b style="color: darkred;"> {{professor.department}} </b></div>
+            <div class="text"><b style="color: darkblue">الخبرة: </b><b style="color: darkred;"> {{professor.experience}} سنوات </b></div>
+            <div class="text"><b style="color: darkblue">الجنس : </b><b style="color: darkred;"> {{professor.gender}} </b></div>
+            <div class="text"><b style="color: darkblue">الهاتف المحمول : </b><b style="color: darkred;"> {{professor.mobile}} </b></div>
             <div *ngIf="professor.status === 'accept'">
-                <div class="status-btn">Approved Professor</div>
+                <div class="status-btn">الأستاذ موافق عليه</div>
             </div>
             <div *ngIf="professor.status === 'reject'" >
-                <div class="status-btn2">Rejected</div>
+                <div class="status-btn2">مرفوض</div>
             </div>
             <div *ngIf="professor.status === 'false'" >
-                <div class="status-btn1">Approval Pending</div>
+                <div class="status-btn1">قيد الموافقة</div>
             </div>
         </div>
     </div>

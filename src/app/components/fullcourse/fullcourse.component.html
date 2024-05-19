@@ -1,81 +1,83 @@
 <app-header></app-header>
 <div class="continer">
     <div>
-    <div style="font-weight: bolder; color: darkgreen; font-size: 35px; margin-bottom: 2%;">Welcome to {{courseName}} course 👋 </div>
+      <div style="font-weight: bolder; color: darkgreen; font-size: 35px; margin-bottom: 2%;">مرحبًا بك في دورة {{courseName}} 👋 </div>
     <youtube-player style="margin-right: 5%;" id="player" [videoId]="video" suggestedQuality="highres" [height]="380" [width]="640"></youtube-player>
     <div class="chapter-list" *ngFor="let chapter of chapterlist | async">
-        <div style="font-weight: bold; font-size: large; align-items: center; color: darkred;"><i class="fa fa-list"></i> Course Contents</div>
-        <div style="color: gray; font-weight: 400; font-size: small; margin-bottom: 5%;">(click on chapter name to get into the videos)</div>
-        <div style="color: red; font-size: medium; font-weight: bolder; margin-top: 30%; margin-left: 5%; margin-right: 5%;" *ngIf="chapter.chapter1name === ''">Currently No Chapters available for this Course. Please wait, the Instructor will be adding the chapters soon here</div>
+      <div style="font-weight: bold; font-size: large; align-items: center; color: darkred;"><i class="fa fa-list"></i> محتويات الدورة</div>
+      <div style="color: gray; font-weight: 400; font-size: small; margin-bottom: 5%;">(انقر على اسم الفصل للوصول إلى مقاطع الفيديو)</div>
+      <div style="color: red; font-size: medium; font-weight: bolder; margin-top: 30%; margin-left: 5%; margin-right: 5%;" *ngIf="chapter.chapter1name === ''">لا تتوفر حاليًا فصول في هذه الدورة. يرجى الانتظار، سيتم إضافة الفصول قريبًا من قبل المدرس</div>
 
         <div style="cursor: pointer;" (click)="set1()" class="chapter1" *ngIf="chapter.chapter1name !== ''">
             <div class="box1" id="select-box"><i class="fa fa-check"></i></div>
             <div class="name" (click)="openChapter(chapter.chapter1id)"> 1) {{chapter.chapter1name}}</div>
-            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">subcontents (1/1)</div>
+            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">المحتويات الفرعية (1/1)</div>
         </div>
         <hr *ngIf="chapter.chapter1name !== ''">
 
         <div style="cursor: pointer;" (click)="set2()" class="chapter2" *ngIf="chapter.chapter2name !== ''">
             <div class="box2" id="select-box"><i class="fa fa-check"></i></div>
             <div class="name" (click)="openChapter(chapter.chapter2id)"> 2) {{chapter.chapter2name}}</div>
-            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">subcontents (1/1)</div>
+            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">المحتويات الفرعية (1/1)</div>
         </div>
         <hr *ngIf="chapter.chapter2name !== ''">
 
         <div style="cursor: pointer;" (click)="set3()" class="chapter3" *ngIf="chapter.chapter3name !== ''">
             <div class="box3" id="select-box"><i class="fa fa-check"></i></div>
             <div class="name" (click)="openChapter(chapter.chapter3id)"> 3) {{chapter.chapter3name}}</div>
-            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">subcontents (1/1)</div>
+            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">المحتويات الفرعية (1/1)</div>
         </div>
         <hr *ngIf="chapter.chapter3name !== ''">
 
         <div style="cursor: pointer;" (click)="set4()" class="chapter4" *ngIf="chapter.chapter4name !== ''">
             <div class="box4" id="select-box"><i class="fa fa-check"></i></div>
             <div class="name" (click)="openChapter(chapter.chapter4id)"> 4) {{chapter.chapter4name}}</div>
-            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">subcontents (1/1)</div>
+            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">المحتويات الفرعية (1/1)</div>
         </div>
         <hr *ngIf="chapter.chapter4name !== ''">
 
         <div style="cursor: pointer;" (click)="set5()" class="chapter5" *ngIf="chapter.chapter5name !== ''">
             <div class="box5" id="select-box"><i class="fa fa-check"></i></div>
             <div class="name" (click)="openChapter(chapter.chapter5id)"> 5) {{chapter.chapter5name}}</div>
-            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">subcontents (1/1)</div>
+            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">المحتويات الفرعية (1/1)</div>
         </div>
         <hr *ngIf="chapter.chapter5name !== ''">
 
         <div style="cursor: pointer;" (click)="set6()" class="chapter6" *ngIf="chapter.chapter6name !== ''">
             <div class="box6" id="select-box"><i class="fa fa-check"></i></div>
             <div class="name" (click)="openChapter(chapter.chapter6id)"> 6) {{chapter.chapter6name}}</div>
-            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">subcontents (1/1)</div>
+            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">المحتويات الفرعية (1/1)</div>
         </div>
         <hr *ngIf="chapter.chapter6name !== ''">
 
         <div style="cursor: pointer;" (click)="set7()" class="chapter7" *ngIf="chapter.chapter7name !== ''">
             <div class="box7" id="select-box"><i class="fa fa-check"></i></div>
             <div class="name" (click)="openChapter(chapter.chapter7id)"> 7) {{chapter.chapter7name}}</div>
-            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">subcontents (1/1)</div>
+            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">المحتويات الفرعية (1/1)</div>
         </div>
         <hr *ngIf="chapter.chapter7name !== ''">
 
         <div style="cursor: pointer;" (click)="set8()" class="chapter8" *ngIf="chapter.chapter8name !== ''">
             <div class="box8" id="select-box"><i class="fa fa-check"></i></div>
             <div class="name" (click)="openChapter(chapter.chapter8id)"> 8) {{chapter.chapter8name}}</div>
-            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">subcontents (1/1)</div>
+            <div style="color: gray; font-weight: 600; font-size: small; margin-left: 12%;">المحتويات الفرعية (1/1)</div>
         </div>
         <hr *ngIf="chapter.chapter8name !== ''">
     </div>
 </div>
 <div class="sub-container">
     <div class="sub-btns">
-        <button id="overview-btn" (click)="openOverview()" class="btn btn-info">Overview</button>
-        <button id="qa-btn" (click)="openQandA()" class="btn btn-info">Q&A</button>
-        <button id="downloads-btn" (click)="openDownloads()" class="btn btn-info">Downloads</button>
-        <button id="notes-btn" (click)="openNotes()" class="btn btn-info">Notes</button>
-        <button id="announcements-btn" (click)="openAnnouncements()" class="btn btn-info">Announcements</button>
+      <button id="overview-btn" (click)="openOverview()" class="btn btn-info">نظرة عامة</button>
+      <button id="qa-btn" (click)="openQandA()" class="btn btn-info">أسئلة وأجوبة</button>
+      <button id="downloads-btn" (click)="openDownloads()" class="btn btn-info">التنزيلات</button>
+      <button id="notes-btn" (click)="openNotes()" class="btn btn-info">ملاحظات</button>
+      <button id="announcements-btn" (click)="openAnnouncements()" class="btn btn-info">الإعلانات</button>
+
         <hr>
     </div>
     <div id="overview" class="descriptions" *ngFor="let course of courselist | async">
-        <strong style="font-weight: bolder; font-size: 25px;">About this Course</strong>
+      <strong style="font-weight: bolder; font-size: 25px;">حول هذه الدورة التعليمية</strong>
+
         <h3 class="card-title text-left" style="margin-top: 1.5%; font-weight: normal; font-size: 21px;">{{course.coursename}}</h3>
         <h6 class="text-center" style="margin-left: 0; padding: 5px 20px 5px 20px; background-color: darkgoldenrod; border-radius: 5px; font-weight: bold; margin-bottom: 2%; margin-top: 1%; display: inline-block; color: white;">{{course.courseid}}</h6>
         <hr style="margin-top: 2%; margin-bottom: 2%;">
@@ -83,25 +85,30 @@
         <p class="card-text"><b style="color: darkblue; font-size: large; margin-bottom: 1%;">{{course.description}}</b></p>
         <hr style="margin-top: 2%; margin-bottom: 2%;">
 
-        <div><b style="color: darkred; font-size: large; margin-bottom: 1%;">Level : </b><b style="margin-left: 12%">{{course.skilllevel}}</b></div>
-        <div><b style="color: darkred; font-size: large; margin-bottom: 1%;">Language : </b><b style="margin-left: 7%">{{course.language}}</b></div>
-        <div><b style="color: darkred; font-size: large; margin-bottom: 1%;">Course Type : </b><b style="margin-left: 4.2%">{{course.coursetype}} contents</b></div>
-        <div><b style="color: darkred; font-size: large; margin-bottom: 1%;">Instructor : </b><b style="margin-left: 7%">{{course.instructorname}} - {{course.instructorinstitution}}</b></div>
-        <div><b style="color: darkred; font-size: large; margin-bottom: 1%;">Enrolled Date : </b><b style="margin-left: 3%">{{course.enrolleddate}}</b></div>
-        <div><b style="color: darkred; font-size: large; margin-bottom: 1%;">Learners : </b><b style="margin-left: 8.5%">{{course.enrolledcount}} learners enrolled previously</b></div>
+        <div><b style="color: darkred; font-size: large; margin-bottom: 1%;">المستوى : </b><b style="margin-left: 12%">{{course.skilllevel}}</b></div>
+<div><b style="color: darkred; font-size: large; margin-bottom: 1%;">اللغة : </b><b style="margin-left: 7%">{{course.language}}</b></div>
+<div><b style="color: darkred; font-size: large; margin-bottom: 1%;">نوع الدورة : </b><b style="margin-left: 4.2%">{{course.coursetype}} محتويات</b></div>
+<div><b style="color: darkred; font-size: large; margin-bottom: 1%;">المدرب : </b><b style="margin-left: 7%">{{course.instructorname}} - {{course.instructorinstitution}}</b></div>
+<div><b style="color: darkred; font-size: large; margin-bottom: 1%;">تاريخ التسجيل : </b><b style="margin-left: 3%">{{course.enrolleddate}}</b></div>
+<div><b style="color: darkred; font-size: large; margin-bottom: 1%;">المتعلمون : </b><b style="margin-left: 8.5%">{{course.enrolledcount}} متعلم سبقوا بالتسجيل</b></div>
+
         <hr style="margin-top: 2%; margin-bottom: 2%;">
 
         <div>
-            <strong style="font-size: large;">Features </strong>
-            <label style="font-weight: large; margin-left: 10%;">Available on <span style="color: blueviolet; font-weight: bold;">Android</span> and <span style="color: blueviolet; font-weight: bold;">iOS</span></label>
+          <strong style="font-size: large;">المميزات</strong>
+
+            <label style="font-weight: large; margin-left: 10%;">متوفر على <span style="color: blueviolet; font-weight: bold;">أندرويد</span> و <span style="color: blueviolet; font-weight: bold;">آي أو إس</span></label>
+
         </div>
         <hr style="margin-top: 2%; margin-bottom: 2%;">
 
         <div>
             <strong style="font-size: large;">Certificate </strong>
-            <label style="font-weight: large; margin-left: 10%;">Get the certificate by completing entire course</label>
+            <label style="font-weight: large; margin-left: 10%;">احصل على الشهادة عند إكمال الدورة بأكملها</label>
+
             <br>
-            <div class="certificate">Certificate</div>
+            <div class="certificate">الشهادة</div>
+
         </div>
         <hr style="margin-top: 2%; margin-bottom: 2%;">
     </div>
@@ -112,28 +119,32 @@
         <textarea type="text" id="questions" rows = "4" class="form-control" placeholder="ask your questions here..."></textarea>
     </div>
     <div id="downloads" *ngFor="let chapter of chapterlist | async" style="padding-bottom: 5%;" class="descriptions">
-        <div id="downloadalert" style="color: darkred; font-size: larger; display: none; font-weight: bolder; margin-top: 5%; margin-bottom: 5%; margin-right: 10%;" *ngIf="chapter.chapter1name === ''">Currently No Resources available for download. Please wait, the Instructor will be adding the Resources while adding the chapters soon here</div>
-        <div *ngIf="chapter.chapter1name !== ''">
-          <strong id="downloadtxt" style="font-size: large; font-weight: bolder; color: black; margin-bottom: 4%; cursor: pointer;">View and download your course related materials here ...</strong>
-          <div style="display: inline-block; width: 100%; margin-top: 5%; margin-bottom: 5%;">
-            <button type="button" class="btn btn-warning btn-sm" style="display: inline-block; margin-right: 5%; border-radius: 10px; font-weight: bolder; font-size: large;" (click)="openDoc()">View Material</button>
-            <button type="button" class="btn btn-success btn-sm" style="display: inline-block; border-radius: 10px; font-weight: bolder; font-size: large;"(click)="downloadPdf()">Download Resource</button>
-          </div>
-          <strong id="downloadtxt" style="font-size: large; font-weight: bolder; color: black; margin-bottom: 5%; cursor: pointer;">For more course materials, contact the Instructor or ADMIN - (Gowthamraj K) gowthamraj692@gmail.com / whatsapp to 9698382306</strong>
+      <div id="downloadalert" style="color: darkred; font-size: larger; display: none; font-weight: bolder; margin-top: 5%; margin-bottom: 5%; margin-right: 10%;" *ngIf="chapter.chapter1name === ''">لا توجد موارد متاحة حاليًا للتنزيل. يرجى الانتظار، سيقوم المدرس بإضافة الموارد أثناء إضافة الفصول قريبًا هنا</div>
+
+      <div *ngIf="chapter.chapter1name !== ''">
+        <strong id="downloadtxt" style="font-size: large; font-weight: bolder; color: black; margin-bottom: 4%; cursor: pointer;">عرض وتنزيل مواد الدورة الخاصة بك هنا ...</strong>
+        <div style="display: inline-block; width: 100%; margin-top: 5%; margin-bottom: 5%;">
+            <button type="button" class="btn btn-warning btn-sm" style="display: inline-block; margin-right: 5%; border-radius: 10px; font-weight: bolder; font-size: large;" (click)="openDoc()">عرض المادة</button>
+            <button type="button" class="btn btn-success btn-sm" style="display: inline-block; border-radius: 10px; font-weight: bolder; font-size: large;" (click)="downloadPdf()">تحميل الموارد</button>
         </div>
+        <strong id="downloadtxt" style="font-size: large; font-weight: bolder; color: black; margin-bottom: 5%; cursor: pointer;">للحصول على مزيد من مواد الدورة، اتصل بالمدرب أو الإدارة - (Gowthamraj K) gowthamraj692@gmail.com / واتساب على 9698382306</strong>
+    </div>
+
     </div>
     <div id="notes" style="padding-bottom: 5%;" class="descriptions">
-        <div style="display: inline-block; color: white; font-weight: bolder; background-color: black; padding: 1.1%; margin-left: 66%; border-radius: 5px; cursor: pointer;"><i class="fa fa-search"></i></div>
-        <input class="form-control" id="searchtxt" type="text" name="searchNotes" placeholder="search course notes here..."/>
-        <strong id="newNotes" (click)="newNotes()" style="font-size: large; font-weight: bolder; color: black; margin-bottom: 4%; cursor: pointer;">Create new Note <i style="color: black; font-size: 18px;" class="fa fa-plus-circle"></i></strong>
-        <textarea type="text" id="notestxt" rows = "2" class="form-control" placeholder="add your new notes here..."></textarea>
-        <br><br><strong style="margin-top: 3%; font-weight: normal;">Click the "Create new note" or the "+" button to make your first note.</strong>
-    </div>
-    <div id="announcements" style="display: inline-block; padding: 10%;" class="descriptions">
-        <strong style="font-weight: bolder; font-size: 28px; margin-left: 12%;">No announcements posted yet</strong>
-        <br>
-        <strong style="font-weight: normal; font-size: 18px;">The instructor hasn’t added any announcements to this course yet. Announcements are used to inform you of updates or additions to the course.</strong>
-    </div>
+      <div style="display: inline-block; color: white; font-weight: bolder; background-color: black; padding: 1.1%; margin-left: 66%; border-radius: 5px; cursor: pointer;"><i class="fa fa-search"></i></div>
+      <input class="form-control" id="searchtxt" type="text" name="searchNotes" placeholder="البحث عن ملاحظات الدورة هنا..."/>
+      <strong id="newNotes" (click)="newNotes()" style="font-size: large; font-weight: bolder; color: black; margin-bottom: 4%; cursor: pointer;">إنشاء ملاحظة جديدة <i style="color: black; font-size: 18px;" class="fa fa-plus-circle"></i></strong>
+      <textarea type="text" id="notestxt" rows="2" class="form-control" placeholder="أضف ملاحظاتك الجديدة هنا..."></textarea>
+      <br><br><strong style="margin-top: 3%; font-weight: normal;">انقر فوق "إنشاء ملاحظة جديدة" أو زر "+" لإنشاء أول ملاحظة لك.</strong>
+  </div>
+
+  <div id="announcements" style="display: inline-block; padding: 10%;" class="descriptions">
+    <strong style="font-weight: bolder; font-size: 28px; margin-left: 12%;">لا توجد إعلانات مضافة حتى الآن</strong>
+    <br>
+    <strong style="font-weight: normal; font-size: 18px;">لم يقم المدرس بإضافة أي إعلانات لهذه الدورة بعد. الإعلانات تُستخدم لإعلامك بالتحديثات أو الإضافات الجديدة إلى الدورة.</strong>
+</div>
+
 </div>
 </div>
 

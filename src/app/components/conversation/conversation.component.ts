@@ -58,8 +58,13 @@ export class ConversationComponent implements OnInit, AfterViewChecked {
   ) {}
   users: Observable<User[]> | undefined;
   ngOnInit() {
-    this.users = this.userService.getAllUsers();
+    if(this.userType=='user'){
+      this.sendMessage()
+    }
     this.userType = this.loginService.userType();
+
+
+    this.users = this.userService.getAllUsers();
     this.activatedRoute.params.subscribe((params) => {
       this.groupId = params['id'];
       this.msg.groupId = params['id'];
@@ -103,9 +108,8 @@ export class ConversationComponent implements OnInit, AfterViewChecked {
           this.msg.sender = 'admin';
           this.messageColor = 'admin';
         } else {
-          this.msg.sender = this.userId;
-          this.messageColor = this.userId;
-          this.userType = this.userId;
+          this.msg.sender = 'user';
+          this.messageColor = 'user';
         }
         this.saveMessage();
       }
@@ -204,6 +208,12 @@ export class ConversationComponent implements OnInit, AfterViewChecked {
   navigateTo(destination: string, id: string) {
     this.router.navigate([destination, id]);
   }
+
+  navigateToWithReload(destination: string, id: string) {
+    this.router.navigate(['/conversation/',id]).then(() => {
+      // Step 2: Once on that route, reload the component associated with it
+      window.location.reload();
+    });}
 
   ngAfterViewChecked() {
     if (this.messageList) {

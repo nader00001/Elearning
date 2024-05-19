@@ -1,7 +1,7 @@
 <div class="sidebar-logo">
     <div class="welcometxt" style="float: left;"><b style="color: white;">{{title}}</b></div>
-    <button class="logoutbtn" style="margin-right: 1%;" (click)="navigateHome()"><i class="fa fa-home"></i> Home</button>
-    <b class="sidebar-text" style="color: whitesmoke;"><i class="fa fa-user"></i> Welcome {{loggedUser}}</b>
-    <button class="logoutbtn" style="margin-right: 1%;" (click)="contacterAdmin()"> Conversation</button>
-    <button class="logoutbtn" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</button>
+    <button class="logoutbtn" style="margin-right: 1%;" (click)="navigateHome()"><i class="fa fa-home"></i> الرئيسية</button>
+    <b class="sidebar-text" style="color: whitesmoke;"><i class="fa fa-user"></i> مرحباً {{loggedUser}}</b>
+    <button *ngIf="currRole === 'admin' || currRole === 'user'" class="logoutbtn" style="margin-right: 1%;" (click)="contacterAdmin()">محادثة</button>
+    <button class="logoutbtn" (click)="logout()"><i class="fa fa-sign-out"></i> تسجيل الخروج</button>
 </div>
